@@ -1,9 +1,18 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useSelector } from 'react-redux';
 
-function Detail() {
+const Detail = () => {
+  const cases = useSelector((state) => state.cases);
+
   return (
-    <h2>Detail</h2>
+    <>
+      {cases.length === 0
+        ? 'no result'
+        : cases.map((cases) => <h3 key={uuid}>{cases.confirmed}</h3>)}
+      ;
+    </>
   );
-}
+};
 
 export default Detail;
