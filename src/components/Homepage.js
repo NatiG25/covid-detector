@@ -1,19 +1,54 @@
-import React from 'react';
-import { v4 as uuid } from 'uuid';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchRegions } from '../redux/regions';
 
 const Homepage = () => {
   const countries = useSelector((state) => state.countries);
-  console.log(countries);
+  const [filter, setFilter] = useState('');
+  const dispatch = useDispatch();
+
+  const handleRegions = (country) => {
+    dispatch(fetchRegions(country));
+  };
 
   return (
     <>
+      <input
+        name="country"
+        type="text"
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        placeholder="Search"
+      />
+      <hr />
       {countries.length === 0
         ? 'no result'
-        : countries.map((country) => <h3 key={uuid}>{country}</h3>)}
-      ;
+        : countries.filter((item) => item.includes(filter) || filter === '')
+          .map((country) => (
+            <>
+              <a href="." key={country.index}>
+                {country}
+              </a>
+              <Link to="detail">
+                <button type="button" onClick={() => handleRegions(country)}>Click me</button>
+              </Link>
+              <hr />
+            </>
+          ))}
     </>
   );
 };
 
 export default Homepage;
+// countries.map((country) => (
+//   <>
+//     <a href="." key={country}>
+//       {country}
+//     </a>
+//     <Link to="detail">
+//       <button type="button" onClick={() => handleRegions(country)}>Click me</button>
+//     </Link>
+//     <hr />
+//   </>
+// ));

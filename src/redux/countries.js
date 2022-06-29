@@ -1,4 +1,4 @@
-import { url } from './detail';
+import { caseURL } from './detail';
 
 // Action Types
 const GET_CONTRIES = 'GET_CONTRIES';
@@ -8,7 +8,7 @@ const getCountries = (payload) => ({ type: GET_CONTRIES, payload });
 
 // Fetch cases
 export const fetchCountries = () => async (dispatch) => {
-  const res = await fetch(url);
+  const res = await fetch(caseURL);
   const resJSON = await res.json();
   const allCountries = [];
   Object.entries(resJSON).map((item) => allCountries.push(item[0]));

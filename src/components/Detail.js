@@ -1,16 +1,25 @@
 import React from 'react';
-import { v4 as uuid } from 'uuid';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Detail = () => {
-  const cases = useSelector((state) => state.cases);
+  const regions = useSelector((state) => state.regions);
 
   return (
     <>
-      {cases.length === 0
+      <Link to="/">
+        <button type="button">Back</button>
+      </Link>
+      {regions.length === 0
         ? 'no result'
-        : cases.map((cases) => <h3 key={uuid}>{cases.confirmed}</h3>)}
-      ;
+        : regions.map((data) => (
+          <p key={data.region}>
+            {data.region}
+            :
+            {' '}
+            {data.confirmed}
+          </p>
+        ))}
     </>
   );
 };
