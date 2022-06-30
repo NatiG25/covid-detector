@@ -4,7 +4,7 @@ import { caseURL } from './detail';
 const GET_REGIONS = 'GET_REGIONS';
 
 // Action Creaters
-const getRegions = (payload) => ({ type: GET_REGIONS, payload });
+export const getRegions = (payload) => ({ type: GET_REGIONS, payload });
 
 export const fetchRegions = (countries) => async (dispatch) => {
   const regionsURL = caseURL.concat(`?country=${countries}`);
@@ -15,7 +15,6 @@ export const fetchRegions = (countries) => async (dispatch) => {
     region: item[0],
     confirmed: item[1].confirmed,
   }));
-
   return dispatch(getRegions(allRegions));
 };
 

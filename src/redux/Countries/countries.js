@@ -1,23 +1,22 @@
-import { caseURL } from './detail';
+import fetchData from './https';
 
 // Action Types
-const GET_CONTRIES = 'GET_CONTRIES';
+const GET_COUNTRIES = 'GET_COUNTRIES';
 
 // Action Creaters
-const getCountries = (payload) => ({ type: GET_CONTRIES, payload });
+export const getCountries = (payload) => ({ type: GET_COUNTRIES, payload });
 
 // Fetch cases
 export const fetchCountries = () => async (dispatch) => {
-  const res = await fetch(caseURL);
-  const resJSON = await res.json();
+  const data = await fetchData();
   const allCountries = [];
-  Object.entries(resJSON).map((item) => allCountries.push(item[0]));
+  Object.entries(data).map((item) => allCountries.push(item[0]));
   return dispatch(getCountries(allCountries));
 };
 
 const countryReducer = (state = [], action) => {
   switch (action.type) {
-    case GET_CONTRIES:
+    case GET_COUNTRIES:
       return action.payload;
     default:
       return state;

@@ -26,29 +26,18 @@ const Homepage = () => {
         ? 'no result'
         : countries.filter((item) => item.includes(filter) || filter === '')
           .map((country) => (
-            <>
-              <a href="." key={country.index}>
+            <div key={country}>
+              <a href=".">
                 {country}
               </a>
               <Link to="detail">
                 <button type="button" onClick={() => handleRegions(country)}>Click me</button>
               </Link>
               <hr />
-            </>
+            </div>
           ))}
     </>
   );
 };
 
 export default Homepage;
-// countries.map((country) => (
-//   <>
-//     <a href="." key={country}>
-//       {country}
-//     </a>
-//     <Link to="detail">
-//       <button type="button" onClick={() => handleRegions(country)}>Click me</button>
-//     </Link>
-//     <hr />
-//   </>
-// ));
