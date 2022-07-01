@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './styles/Homepage.css';
 import { fetchRegions } from '../redux/Regions/regions';
-// import rigthArrow from '../images/rigth-arrow.png';
+import arrowRegion from '../images/rigth-arrow.png';
+import earth from '../images/earth.png';
 
 const Homepage = () => {
   const countries = useSelector((state) => state.countries);
@@ -23,20 +25,26 @@ const Homepage = () => {
         placeholder="Search"
         className="input"
       />
-      {countries.length === 0
-        ? 'no result'
-        : countries.filter((item) => item.includes(filter) || filter === '')
-          .map((country) => (
-            <div key={country} className="countries">
-              <a href=".">
-                {country}
-              </a>
-              <Link to="detail">
-                <button onClick={() => handleRegions(country)} type="button">Click me</button>
-              </Link>
-              { /* <img src={rigthArrow} alt="right-arrow" /> */ }
-            </div>
-          ))}
+      <div className="mainHeader">
+        <img src={earth} alt="earth" />
+        <h1>Global Cases</h1>
+      </div>
+      <p className="subHeader">STATS BY COUNTRY</p>
+      <ul className="countryList">
+        {countries.length === 0
+          ? 'no result'
+          : countries
+            .filter((item) => item.country === filter || filter === '')
+            .map((country) => (
+              <li key={country.country} className="listItem">
+                <Link to="detail" onClick={() => handleRegions(country.country)}>
+                  <img className="arrowRegion" src={arrowRegion} alt="right-arrow" />
+                </Link>
+                <a href=".">{country.country}</a>
+                <p>{country.confirmed}</p>
+              </li>
+            ))}
+      </ul>
     </>
   );
 };

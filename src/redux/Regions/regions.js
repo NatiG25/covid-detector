@@ -12,7 +12,9 @@ export const fetchRegions = (countries) => async (dispatch) => {
   Object.entries(regions).map((region) => allRegions.push({
     region: region[0],
     confirmed: region[1].confirmed,
+    country: region[1].country,
   }));
+  console.log(allRegions);
   return dispatch(getRegions(allRegions));
 };
 

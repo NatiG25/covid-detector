@@ -2,7 +2,6 @@ import countryReducer, { fetchCountries, getCountries } from '../redux/Countries
 import regionsReducer, { getRegions, fetchRegions } from '../redux/Regions/regions';
 import allCountries from './__testData__/allCountries';
 import allRegions from './__testData__/allRegions';
-// console.log(fetchCountries());
 
 jest.mock('../redux/Countries/https');
 jest.mock('../redux/Regions/http');

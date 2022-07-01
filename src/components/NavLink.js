@@ -7,9 +7,12 @@ import arrow from '../images/back-arrow.png';
 function NavLink() {
   return (
     <nav className="nav">
-      <Link to="/">
-        <img src={arrow} alt="Back Arrow" />
-      </Link>
+      <div className="backNav">
+        <Link to="/">
+          <img src={arrow} alt="Back Arrow" />
+        </Link>
+        <h2>2022</h2>
+      </div>
       <div>
         <img src={voice} alt="Voice recorder" />
         <img src={settings} alt="Settings" />

@@ -10,7 +10,7 @@ export const getCountries = (payload) => ({ type: GET_COUNTRIES, payload });
 export const fetchCountries = () => async (dispatch) => {
   const data = await fetchData();
   const allCountries = [];
-  Object.entries(data).map((item) => allCountries.push(item[0]));
+  Object.entries(data).map((item) => allCountries.push(item[1].All));
   return dispatch(getCountries(allCountries));
 };
 
