@@ -1,4 +1,4 @@
-const fetchData = async () => ({
+const fetchData = () => ({
   Afghanistan: {
     All: {
       confirmed: 182403,

@@ -34,6 +34,7 @@ To get a local copy up and running follow these simple example steps.
 - go to the repository folder in your command prompt cd Metrics-webApp
 - use npm install to install the dependencies.
 - use npm start to start live server.
+
 ## Prerequisites
 
 - Have a working and updated browser

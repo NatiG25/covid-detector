@@ -1,4 +1,4 @@
-import { caseURL } from './detail';
+import fetchDataRegions from './http';
 
 // Action Types
 const GET_REGIONS = 'GET_REGIONS';
@@ -7,13 +7,11 @@ const GET_REGIONS = 'GET_REGIONS';
 export const getRegions = (payload) => ({ type: GET_REGIONS, payload });
 
 export const fetchRegions = (countries) => async (dispatch) => {
-  const regionsURL = caseURL.concat(`?country=${countries}`);
-  const res = await fetch(regionsURL);
-  const resJSON = await res.json();
+  const regions = await fetchDataRegions(countries);
   const allRegions = [];
-  Object.entries(resJSON).map((item) => allRegions.push({
-    region: item[0],
-    confirmed: item[1].confirmed,
+  Object.entries(regions).map((region) => allRegions.push({
+    region: region[0],
+    confirmed: region[1].confirmed,
   }));
   return dispatch(getRegions(allRegions));
 };

@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, legacy_createStore as createStore } f
 import thunk from 'redux-thunk';
 import cases from './detail';
 import countries from './Countries/countries';
-import regions from './regions';
+import regions from './Regions/regions';
 
 const rootReducer = combineReducers({
   cases,

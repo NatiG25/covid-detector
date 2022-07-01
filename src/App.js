@@ -6,6 +6,7 @@ import { fetchCases } from './redux/detail';
 import { fetchCountries } from './redux/Countries/countries';
 import Homepage from './components/Homepage';
 import Detail from './components/Detail';
+import NavLink from './components/NavLink';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <>
+      <NavLink />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/detail" element={<Detail />} />
