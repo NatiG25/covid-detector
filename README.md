@@ -6,9 +6,9 @@
 ## Mockup
 This design is inspired by Nelson Sakwa, in association with the Creative Commons license.
 
-![Screenshot from 2022-07-02 01-14-01](https://user-images.githubusercontent.com/86069740/176977298-4767808b-c756-461f-b3b7-adc57c602fdc.png)
-
 ![Screenshot from 2022-07-02 01-13-53](https://user-images.githubusercontent.com/86069740/176977303-7a010b58-3c0b-44e7-a5e2-4d45e9e318b5.png)
+
+![Screenshot from 2022-07-02 01-14-01](https://user-images.githubusercontent.com/86069740/176977298-4767808b-c756-461f-b3b7-adc57c602fdc.png)
 
 ## Built With
 
