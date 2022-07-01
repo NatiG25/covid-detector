@@ -14,7 +14,6 @@ export const fetchRegions = (countries) => async (dispatch) => {
     confirmed: region[1].confirmed,
     country: region[1].country,
   }));
-  console.log(allRegions);
   return dispatch(getRegions(allRegions));
 };
 
