@@ -13,16 +13,29 @@ body {
   justify-content: space-between;
   color: white;
   align-items: center;
+  padding: 10px;
 }
 
 .regions:nth-child(even) {
   background-color: #d04e79;
 }
 
-.regionCases {
+.totalRegion {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 20px;
   font-weight: bold;
+}
+
+.headerRegion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.europeIMG {
+  height: auto;
+  width: 100px;
+  margin-left: 30px;
 }

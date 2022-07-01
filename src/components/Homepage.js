@@ -5,6 +5,7 @@ import './styles/Homepage.css';
 import { fetchRegions } from '../redux/Regions/regions';
 import arrowRegion from '../images/rigth-arrow.png';
 import earth from '../images/earth.png';
+import europe from '../images/europe.png';
 
 const Homepage = () => {
   const countries = useSelector((state) => state.countries);
@@ -14,6 +15,9 @@ const Homepage = () => {
   const handleRegions = (country) => {
     dispatch(fetchRegions(country));
   };
+
+  const varFilter = countries
+    .filter((item) => item.country !== undefined && item.country.includes(filter));
 
   return (
     <>
@@ -33,13 +37,13 @@ const Homepage = () => {
       <ul className="countryList">
         {countries.length === 0
           ? 'no result'
-          : countries
-            .filter((item) => item.country === filter || filter === '')
+          : varFilter
             .map((country) => (
               <li key={country.country} className="listItem">
                 <Link to="detail" onClick={() => handleRegions(country.country)}>
                   <img className="arrowRegion" src={arrowRegion} alt="right-arrow" />
                 </Link>
+                <img className="europeIMG" src={europe} alt="europe" />
                 <a href=".">{country.country}</a>
                 <p>{country.confirmed}</p>
               </li>

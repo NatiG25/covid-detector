@@ -1,26 +1,31 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './styles/Detail.css';
+import europe from '../images/europe.png';
 
 const Detail = () => {
-  const regions = useSelector((state) => state.regions);
+  const allRegions = useSelector((state) => state.regions);
 
   return (
     <section>
-      {regions.filter((all) => all.country)
-        .map((allfilter) => (
-          <div key={allfilter.country} className="regionCases">
-            <h2>{allfilter.country}</h2>
-            <p>
-              Total Cases:
-              {allfilter.confirmed}
-            </p>
+      {allRegions.filter((item) => item.country)
+        .map((itemFilter) => (
+          <div key={itemFilter.country} className="headerRegion">
+            <img className="europeIMG" src={europe} alt="europe" />
+            <div className="totalRegion">
+              <h2>{itemFilter.country}</h2>
+              <p>
+                Total Cases:
+                {' '}
+                {itemFilter.confirmed}
+              </p>
+            </div>
           </div>
         ))}
       <p className="subHeader">CITY/TOWN BREAKDOWN-2022</p>
-      {regions.length === 0
+      {allRegions.length === 0
         ? 'no result'
-        : regions.filter((region) => !(region.country)).map((data) => (
+        : allRegions.filter((region) => !(region.country)).map((data) => (
           <div key={data.region} className="regions">
             <div>
               <p>
