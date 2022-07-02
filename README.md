@@ -11,7 +11,7 @@ This design was inspired by Nelson Sakwa, in association with the Creative Commo
 ![Screenshot from 2022-07-02 01-14-01](https://user-images.githubusercontent.com/86069740/176977298-4767808b-c756-461f-b3b7-adc57c602fdc.png)
 
 ## Video Presentation
-https://loom.com/share/cf5dba72edc34d0f9e89d84aaf56787b.mp4
+(https://loom.com/share/cf5dba72edc34d0f9e89d84aaf56787b.mp4)
 
 ## Built With
 
