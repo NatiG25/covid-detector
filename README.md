@@ -4,7 +4,7 @@
 > This is a web application that'll display the live total number of COVID-19 cases around the world. The users can quickly search for any specific country of their choosing.
 
 ## Mockup
-This design is inspired by Nelson Sakwa, in association with the Creative Commons license.
+This design was inspired by Nelson Sakwa, in association with the Creative Commons license.
 
 ![Screenshot from 2022-07-02 01-13-53](https://user-images.githubusercontent.com/86069740/176977303-7a010b58-3c0b-44e7-a5e2-4d45e9e318b5.png)
 
