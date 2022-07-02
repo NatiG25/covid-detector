@@ -66,7 +66,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-- [Live link](https://deploy-preview-2--covid19-globally.netlify.app)
+- [Live link](https://62c0520991bd054aae5730d6--covid19-globally.netlify.app/)
 
 ## Author
 
